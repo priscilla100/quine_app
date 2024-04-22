@@ -6,7 +6,7 @@ code = %r
 
 def main():
     st.title("🚀 Priscilla's Quine Program")
-    st.header("🚀 Priscilla's Quine Program" divider='rainbow')
+    st.header("🚀 Priscilla's Quine Program", divider='rainbow')
     st.markdown("💬  Give me a code and I will spit it out")
 
     # Text input for the user to enter Python code
