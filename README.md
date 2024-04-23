@@ -1,20 +1,20 @@
-# quine_app
-What is a quine program?
-This is the core of the quine behavior, which is a program that prints its own source code.
+# Self-Replicating Quine
 
-This application is implemented in Python with Streamlit app used for deployment.
+This Python program demonstrates the concept of a **self-replicating Quine**. A Quine is a program that produces its own source code as its output. In this Quine, the program is designed to print its own source code.
 
-Streamlit app allows the user to enter Python code.
-The "Display code" button when clicked, performs the following actions:
-1. Displays the user's code in a code block using `st.code(user_code, language="python")`.
-2. Creates a new string quine_output by replacing `%r` in quine_code with the user_code string, effectively creating a quine code snippet with the user's code embedded in it.
-3. Displays the quine_output string in a code block using `st.code(quine_output, language="python")`.
+## How it Works
 
+The Quine program consists of two classes:
 
-A multi-line string variable called `quine_code`. This string represents a Python code snippet that takes a string representation of itself `(%r)` and prints it using string formatting `(print(code %% code))`. 
+1. **SelfReplicatingProgram**: An abstract base class defining the structure of a self-replicating program.
+   
+2. **Quine**: A concrete subclass of SelfReplicatingProgram that implements the self-replication functionality.
 
+The Quine class overrides the `print_source` method of the SelfReplicatingProgram class. This method generates the source code of the program by splitting the header (which contains import statements and class definitions) into lines, escaping newline characters, and printing each line.
 
+## Usage
 
-In summary, this program essentially prints out its own source code by embedding the code within a string and then printing that string, formatted with itself.
+To run the Quine program, simply execute it using a Python interpreter:
 
-
+```bash
+python quine.py
